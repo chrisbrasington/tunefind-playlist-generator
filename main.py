@@ -77,7 +77,7 @@ if __name__ == '__main__':
 		playlist_id = api.create_playlist(show)
 
 		# load seasons in show
-		data = get_show(show)
+		data = get_show(show.replace(' ', '-'))
 		
 		# song id array (added per season to single playlist)
 		song_ids = []
