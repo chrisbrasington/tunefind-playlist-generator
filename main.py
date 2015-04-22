@@ -29,7 +29,11 @@ def get_show(show):
 
 # get individual song ID for google musc
 def get_song_id(song):
-	result = api.search_all_access(song,10)
+	try:
+		result = api.search_all_access(song,10)
+	# occasionally creating bad search
+	except:
+		return False
 
 	# take first song hit
 	if len(result['song_hits']) > 0:
