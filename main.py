@@ -39,7 +39,7 @@ def get_song_id(song):
 	if len(result['song_hits']) > 0:
 		found_song = result['song_hits'][0]
 		id = found_song['track']['nid']
-		print '\t', song
+		print '\t', song.encode("utf-8")
 		return id
 	else:
 		return False
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 				data = get(season_url+'/'+episode['id'])
 
 				# mismatch between sound count and data returned by API?
-				print episode['name'], ' songs: ', len(data['songs']), '/', episode['song_count']
+				print episode['name'].encode("utf-8"), ' songs: ', len(data['songs']), '/', episode['song_count']
 
 				# for each song
 				for song in data['songs']:
