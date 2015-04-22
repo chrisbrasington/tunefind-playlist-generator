@@ -101,15 +101,15 @@ if __name__ == '__main__':
 
 				# for each song
 				for song in data['songs']:
-					if(song['confidence'] == 'high'):
-						search_song = song['artist']['name'] + ' - ' + song['name']
+					#if(song['confidence'] == 'high'):
+					search_song = song['artist']['name'] + ' - ' + song['name']
 
-						# get song ID
-						id = get_song_id(search_song)
-						if(id):
-							song_ids.append(id)
-						#else:
-						#	print search_song + ' (not found)'
+					# get song ID
+					id = get_song_id(search_song)
+					if(id):
+						song_ids.append(id)
+					#else:
+					#	print search_song + ' (not found)'
 				print
 				
 			# add season of music to playlist 
