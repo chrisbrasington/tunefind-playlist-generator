@@ -54,9 +54,9 @@ def login():
 	if 'google' not in globals():
 		username = raw_input('google email: ')
 		password = getpass.getpass('password: ')
-		logged_in = api.login(username, password)	
+		logged_in = api.login(username, password, Mobileclient.FROM_MAC_ADDRESS)	
 	else:
-		logged_in = api.login(google.username, google.password)
+		logged_in = api.login(google.username, google.password, Mobileclient.FROM_MAC_ADDRESS)
 
 	if logged_in:
 		return True
